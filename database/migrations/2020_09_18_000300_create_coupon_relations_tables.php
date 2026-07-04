@@ -16,15 +16,15 @@ return new class extends Migration
 
         Schema::create('igniter_coupon_categories', function(Blueprint $table): void {
             $table->engine = 'InnoDB';
-            $table->integer('coupon_id')->unsigned()->index('coupon_id_index');
-            $table->integer('category_id')->unsigned()->index('category_id_index');
+            $table->integer('coupon_id')->unsigned()->index('coupon_id_categories_index');
+            $table->integer('category_id')->unsigned()->index('category_id_categories_index');
             $table->unique(['coupon_id', 'category_id'], 'coupon_category_unique');
         });
 
         Schema::create('igniter_coupon_menus', function(Blueprint $table): void {
             $table->engine = 'InnoDB';
-            $table->integer('coupon_id')->unsigned()->index('coupon_id_index');
-            $table->integer('menu_id')->unsigned()->index('menu_id_index');
+            $table->integer('coupon_id')->unsigned()->index('coupon_id_menus_index');
+            $table->integer('menu_id')->unsigned()->index('menu_id_menus_index');
             $table->unique(['coupon_id', 'menu_id'], 'coupon_menu_unique');
         });
     }
